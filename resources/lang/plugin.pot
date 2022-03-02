@@ -1,0 +1,46 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-25 13:21+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: resources/views/admin/settings/inputs/default.php:3
+msgid "Default input field"
+msgstr ""
+
+#: src/Settings/Settings.php:22
+msgid "General settings"
+msgstr ""
+
+#: src/Settings/Settings.php:26
+msgid "Plugin enabled"
+msgstr ""
+
+#: src/Settings/Settings.php:32
+msgid "Hash"
+msgstr ""
+
+#: src/Core/Config.php:49
+msgid "Preview Draft"
+msgstr ""
+
+#: src/Dashboard/Dashboard.php:16
+msgid "Post Draft Preview"
+msgstr ""
+
+#: src/PostPreview/PostPreview.php:23
+msgid "Public draft preview"
+msgstr ""

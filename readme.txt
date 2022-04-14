@@ -9,7 +9,7 @@ Requires PHP: 7.4
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
-Public the post drafts by special link
+Allow non logged-in users to check a draft of unpublished post by using secret link
 
 == Description ==
 

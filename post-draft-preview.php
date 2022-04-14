@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Post Draft Preview
  * Plugin URI: https://wpserved.com/plugins/post-draft-preview/
- * Description: Public the post drafts by special link
+ * Description: Allow non logged-in users to check a draft of unpublished post by using secret link
  * Version: 1.0.0
  * Author: wpserved
  * Author URI: https://wpserved.com/

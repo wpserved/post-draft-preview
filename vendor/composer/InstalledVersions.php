@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-develop',
-    'version' => 'dev-develop',
+    'pretty_version' => 'dev-master',
+    'version' => 'dev-master',
     'aliases' => 
     array (
     ),
-    'reference' => 'c427ca79ea230270861c27c2c1fcb637b9b2df2a',
+    'reference' => 'af60a98c5fe3bbe7573ec05100d54348f247f427',
     'name' => 'src/pdp',
   ),
   'versions' => 
@@ -132,12 +132,12 @@ private static $installed = array (
     ),
     'src/pdp' => 
     array (
-      'pretty_version' => 'dev-develop',
-      'version' => 'dev-develop',
+      'pretty_version' => 'dev-master',
+      'version' => 'dev-master',
       'aliases' => 
       array (
       ),
-      'reference' => 'c427ca79ea230270861c27c2c1fcb637b9b2df2a',
+      'reference' => 'af60a98c5fe3bbe7573ec05100d54348f247f427',
     ),
     'symfony/polyfill-mbstring' => 
     array (

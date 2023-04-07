@@ -25,12 +25,12 @@ class InstalledVersions
 private static $installed = array (
   'root' => 
   array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
+    'pretty_version' => 'dev-develop',
+    'version' => 'dev-develop',
     'aliases' => 
     array (
     ),
-    'reference' => 'af60a98c5fe3bbe7573ec05100d54348f247f427',
+    'reference' => '9b78f5ee61151c34124a2c98c8e64d5f4ba3455e',
     'name' => 'src/pdp',
   ),
   'versions' => 
@@ -132,12 +132,12 @@ private static $installed = array (
     ),
     'src/pdp' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'dev-develop',
+      'version' => 'dev-develop',
       'aliases' => 
       array (
       ),
-      'reference' => 'af60a98c5fe3bbe7573ec05100d54348f247f427',
+      'reference' => '9b78f5ee61151c34124a2c98c8e64d5f4ba3455e',
     ),
     'symfony/polyfill-mbstring' => 
     array (
@@ -406,7 +406,7 @@ $installed = array();
 
 if (self::$canGetVendors) {
 
- foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
+foreach (ClassLoader::getRegisteredLoaders() as $vendorDir => $loader) {
 if (isset(self::$installedByVendor[$vendorDir])) {
 $installed[] = self::$installedByVendor[$vendorDir];
 } elseif (is_file($vendorDir.'/composer/installed.php')) {

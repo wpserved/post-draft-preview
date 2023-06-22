@@ -1,5 +1,6 @@
 node_modules/
 dist
+build
 vendor
 resources/assets/config-local.json
 .cache-loader

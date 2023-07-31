@@ -21,7 +21,6 @@ class Config
 
         wp_enqueue_style('pdp/front.css', PDP_ASSETS_URI . '/styles/front.css', false, $version);
         wp_enqueue_script('pdp/manifest.js', PDP_ASSETS_URI . '/scripts/manifest.js', ['jquery'], $version, true);
-        wp_enqueue_script('pdp/vendor.js', PDP_ASSETS_URI . '/scripts/vendor.js', ['pdp/manifest.js'], $version, true);
         wp_enqueue_script('pdp/front.js', PDP_ASSETS_URI . '/scripts/front.js', ['pdp/manifest.js'], $version, true);
     }
 
@@ -34,7 +33,6 @@ class Config
 
         wp_enqueue_style('pdp/admin.css', PDP_ASSETS_URI . '/styles/admin.css', false, $version);
         wp_enqueue_script('pdp/manifest.js', PDP_ASSETS_URI . '/scripts/manifest.js', ['jquery'], $version, true);
-        wp_enqueue_script('pdp/vendor.js', PDP_ASSETS_URI . '/scripts/vendor.js', ['pdp/manifest.js'], $version, true);
         wp_enqueue_script('pdp/admin.js', PDP_ASSETS_URI . '/scripts/admin.js', ['pdp/manifest.js'], $version, true);
     }
 }

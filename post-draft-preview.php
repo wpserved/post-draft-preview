@@ -4,7 +4,7 @@
  * Plugin Name: Post Draft Preview
  * Plugin URI: https://wpserved.com/plugins/post-draft-preview/
  * Description: Allow non logged-in users to check a draft of unpublished post by using secret link
- * Version: 1.2.0
+ * Version: 1.2.0.1
  * Author: wpserved
  * Author URI: https://wpserved.com/
  * Text Domain: pdp

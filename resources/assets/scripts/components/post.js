@@ -1,15 +1,17 @@
 export default class Post {
   constructor() {
+    this.autoDraftId = this.getAutoDraftId();
 
     if ('undefined' === typeof window.pdp.post) {
       return;
     }
 
+    this.autoGenerate = window.pdp.post.autoGenerate || 0;
     this.previewUrl = window.pdp.post.previewUrl || '#';
     this.status = window.pdp.post.status || 0;
     this.changeStatusNonce = window.pdp.post.changeStatusNonce || '';
     this.getStatusNonce = window.pdp.post.getStatusNonce || '';
-    this.id = window.pdp.post.id || 0;
+    this.id = null !== this.autoDraftId ? this.autoDraftId : window.pdp.post.id || 0;
 
     this.label = this.getLabel(this.status);
 
@@ -66,7 +68,12 @@ export default class Post {
   addPreviewButtonForGutenberg() {
     const slot = $('button.block-editor-post-preview__button-toggle');
     const previewUrl = $(`<a class="pdp-preview-url" href="${this.previewUrl}" target="_blank"><input type="text" value="${this.previewUrl}" readonly></a>`);
-    
+    const checkbox = $('<label  class="pdp-preview-checkbox-gutenberg"><input type="hidden" name="pdp_auto_generate" value="0"><input type="checkbox">Always generate a post draft preview URL when a new draft is created</label>');
+
+    if (1 === this.autoGenerate) {
+      checkbox.find('input[type=checkbox]').prop('checked', true);
+    }
+
     if (slot) {
       $(`<a class="components-button is-secondary button--pdp-change-status" href="#">${this.label}</a>`).insertBefore(slot);
     }
@@ -76,12 +83,18 @@ export default class Post {
     }
 
     previewUrl.insertBefore(slot);
+    checkbox.insertBefore(slot);
   }
 
   addButtonForClassicEditor() {
     const slot = $('.button#post-preview');
     const container = $('<div>');
-    const  previewUrl = $(`<a class="pdp-preview-url" href="${this.previewUrl}" target="_blank"><input type="text" value="${this.previewUrl}" readonly></a>`);
+    const previewUrl = $(`<a class="pdp-preview-url" href="${this.previewUrl}" target="_blank"><input type="text" value="${this.previewUrl}" readonly></a>`);
+    const checkbox = $('<label class="pdp-preview-checkbox"><input type="hidden" name="pdp_auto_generate" value="0"><input type="checkbox" name="pdp_auto_generate" value="1">Always generate a post draft preview URL when a new draft is created</label>');
+
+    if (1 === this.autoGenerate) {
+      checkbox.find('input[type=checkbox]').prop('checked', true);
+    }
 
     if (slot) {
       $(`<a class="preview button is-pdp-preview button--pdp-change-status" href="#">${this.label}</a>`).appendTo(container);
@@ -92,6 +105,7 @@ export default class Post {
     }
 
     previewUrl.appendTo(container);
+    checkbox.appendTo(container);
 
     container.insertAfter(slot);
   }
@@ -117,5 +131,31 @@ export default class Post {
     if ($('#postdivrich').length > 0) {
       $(document).trigger('pdp_editor_loaded');
     }
+  }
+
+  hasAutoDraftId() {
+    const autoDraftField = document.getElementById('auto_draft');
+
+    if (null === autoDraftField) {
+      return false;
+    }
+
+    return 1 == autoDraftField.value;
+  }
+
+  getAutoDraftId() {
+    return null;
+
+    if (! this.hasAutoDraftId()) {
+      return null;
+    }
+
+    const postIdField = document.getElementById('post_ID');
+
+    if (null === postIdField) {
+      return null;
+    }
+
+    return postIdField.value;
   }
 }

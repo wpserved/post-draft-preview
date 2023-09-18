@@ -3,6 +3,7 @@
 namespace PostDraftPreview\Post;
 
 use PostDraftPreview\Post\Post;
+use WP_Post;
 
 class Draft
 {
@@ -57,5 +58,17 @@ class Draft
     public function getPublicDraftPreviewUrl(\WP_Post $post): string
     {
         return ! empty($this->post->getMeta()->getHash($post->ID)) ? add_query_arg('hash', $this->post->getMeta()->getHash($post->ID), get_permalink($post)) : '';
+    }
+
+    /**
+     * @_action save_post
+     */
+    public function onSavePost(int $postId, \WP_Post $post, bool $update): void
+    {
+        if (! isset($_POST['pdp_auto_generate'])) {
+            return;
+        }
+
+        update_option('pdp_auto_generate', $_POST['pdp_auto_generate']);
     }
 }

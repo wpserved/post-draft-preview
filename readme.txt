@@ -31,6 +31,9 @@ You can find full plugin description [here](https://wpserved.com/plugins/post-dr
 You can find plugin's source files on our GitHub repo [page](https://github.com/wpserved/post-draft-preview).
 
 == Changelog ==
+= 1.0.2 =
+* Discourage robots from visiting draft pages
+
 = 1.0.1 =
 * Fix problem with the "Disable PDP" button
 * Update the tested up WP version

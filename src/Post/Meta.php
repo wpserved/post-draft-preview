@@ -108,4 +108,15 @@ class Meta
         }
         return [];
     }
+
+    public function setPostTypeAutogenerateSetting(string $postType, bool $enabled): bool
+    {
+        error_log($postType);
+        return update_option("pdp_autogenerate_{$postType}", $enabled);
+    }
+
+    public function getPostTypeAutogenerateSetting(string $postType): bool
+    {
+        return get_option("pdp_autogenerate_{$postType}", false);
+    }
 }

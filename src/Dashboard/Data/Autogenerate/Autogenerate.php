@@ -10,13 +10,14 @@ class Autogenerate
     public function __construct()
     {
         createClass('PostDraftPreview\Dashboard\Data\Autogenerate\Ajax');
+        createClass('PostDraftPreview\Dashboard\Data\Autogenerate\Save');
     }
 
     public function view(): void
     {
         $postTypes = get_post_types([
-          'public' => true,
-          'show_ui' => true,
+            'public' => true,
+            'show_ui' => true,
         ], 'objects');
 
         $meta = new Meta();
@@ -26,8 +27,6 @@ class Autogenerate
             'label' => $postType->label,
             'value' => $meta->getPostTypeAutogenerateSetting($postType->name),
         ], $postTypes);
-
-        var_dump($postTypes);
 
         include PDP_RESOURCES_PATH . '/views/admin/settings/data-autogenerate.php';
     }

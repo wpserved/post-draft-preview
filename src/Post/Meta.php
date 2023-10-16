@@ -111,12 +111,14 @@ class Meta
 
     public function setPostTypeAutogenerateSetting(string $postType, bool $enabled): bool
     {
-        error_log($postType);
-        return update_option("pdp_autogenerate_{$postType}", $enabled);
+        $optionName = "pdp_autogenerate_post_type_{$postType}";
+
+        delete_option($optionName);
+        return update_option($optionName, $enabled);
     }
 
     public function getPostTypeAutogenerateSetting(string $postType): bool
     {
-        return get_option("pdp_autogenerate_{$postType}", false);
+        return get_option("pdp_autogenerate_post_type_{$postType}", false);
     }
 }

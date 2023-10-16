@@ -13,7 +13,7 @@
                 <li>
                     <label>
                         <input type="hidden" name="post_types[<?php echo $type['name']; ?>]" value="off">
-                        <input type="checkbox" name="post_types[<?php echo $type['name']; ?>]" value="off" <?php if (true === $type['value']) : ?> checked <?php endif; ?>>
+                        <input type="checkbox" name="post_types[<?php echo $type['name']; ?>]" value="on" <?php if (true === $type['value']) : ?> checked <?php endif; ?>>
                         <?php echo $type['label']; ?>
                     </label>
                 </li>

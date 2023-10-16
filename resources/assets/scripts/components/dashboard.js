@@ -35,7 +35,6 @@ export default class Dashboard {
       }
 
       let data = this.getForm(buttonObj);
-      console.log(data);
 
       data.append('action', "pdp-" + button);
       data.append('confirmation', 1),

@@ -8,8 +8,8 @@ use PostDraftPreview\Dashboard\Data\Remove\Remove;
 
 class Dashboard
 {
-    private ?Reset $reset = null;
-    private ?Remove $remove = null;
+    private ?Reset $dataReset = null;
+    private ?Remove $dataRemove = null;
     private ?Autogenerate $autogenerate = null;
 
     public function __construct()

@@ -50,12 +50,23 @@ class Draft
 
     public function displayDraftPost(?array $posts, \WP_Query $query): ?array
     {
+        if (! empty($posts)) {
+            return $posts;
+        }
+
         remove_filter('the_posts', 'display_draft_post', 10, 2);
         return $query->_draft_post;
     }
 
     public function getPublicDraftPreviewUrl(\WP_Post $post): string
     {
-        return ! empty($this->post->getMeta()->getHash($post->ID)) ? add_query_arg('hash', $this->post->getMeta()->getHash($post->ID), get_permalink($post)) : '';
+        $queryArgs = [
+            'hash' => $this->post->getMeta()->getHash($post->ID),
+            'preview' => 'true',
+        ];
+
+        $previewUrl = add_query_arg($queryArgs, get_permalink($post));
+
+        return ! empty($this->post->getMeta()->getHash($post->ID)) ? $previewUrl : '';
     }
 }

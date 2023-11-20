@@ -2,18 +2,21 @@
 
 namespace PostDraftPreview\Dashboard;
 
+use PostDraftPreview\Dashboard\Data\Autogenerate\Autogenerate;
 use PostDraftPreview\Dashboard\Data\Reset\Reset;
 use PostDraftPreview\Dashboard\Data\Remove\Remove;
 
 class Dashboard
 {
-    private ?Reset $reset = null;
-    private ?Remove $remove = null;
+    private ?Reset $dataReset = null;
+    private ?Remove $dataRemove = null;
+    private ?Autogenerate $autogenerate = null;
 
     public function __construct()
     {
         $this->dataReset = createClass(Reset::class);
         $this->dataRemove = createClass(Remove::class);
+        $this->autogenerate = createClass(Autogenerate::class);
     }
 
     /**

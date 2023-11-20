@@ -11,6 +11,10 @@ export default class Dashboard {
     if (this.issetButton('data-reset')) {
       this.initDataAction('data-reset');
     }
+
+    if (this.issetButton('data-autogenerate')) {
+      this.initDataAction('data-autogenerate');
+    }
   }
 
   issetButton(button) {
@@ -30,15 +34,19 @@ export default class Dashboard {
         return;
       }
 
+      let data = this.getForm(buttonObj);
+
+      data.append('action', "pdp-" + button);
+      data.append('confirmation', 1),
+      data.append('nonce', this.getNonceByButton(button));
+
       $.ajax({
         url: pdp.ajaxurl,
         type: "post",
         dataType: "json",
-        data: {
-            action: "pdp-" + button,
-            confirmation: 1,
-            nonce: this.getNonceByButton(button)
-        }
+        processData: false,
+        contentType: false,
+        data: data ?? {},
       })
       .success(response => {
         this.showMessage(response, buttonObj);
@@ -67,6 +75,16 @@ export default class Dashboard {
     }
 
     return pdp.dashboard.data[nonceField];
+  }
+
+  getForm(buttonObject) {
+    const form = buttonObject.parent('form');
+
+    if (0 >= form.length) {
+      return new FormData();
+    }
+
+    return new FormData(form[0]);
   }
 
   showMessage(response, buttonObj) {

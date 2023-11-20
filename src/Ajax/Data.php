@@ -26,6 +26,7 @@ class Data
         ) {
             $data['dashboard']['data']['resetNonce'] = apply_filters('pdp/dashboard/data/reset/nonce', '');
             $data['dashboard']['data']['removeNonce'] = apply_filters('pdp/dashboard/data/remove/nonce', '');
+            $data['dashboard']['data']['autogenerateNonce'] = apply_filters('pdp/dashboard/data/autogenerate/nonce', '');
 
             return $data;
         }

@@ -13,6 +13,7 @@ class Post
     private ?PostEdit $PostEdit = null;
     private ?Meta $meta = null;
     private ?Draft $draft = null;
+    private ?Robots $robots = null;
 
     public function __construct()
     {
@@ -20,6 +21,7 @@ class Post
         $this->PostEdit = createClass(PostEdit::class, [$this]);
         $this->meta = createClass(Meta::class);
         $this->draft = createClass(Draft::class, [$this]);
+        $this->robots = createClass(Robots::class, [$this]);
     }
 
     public function getMeta(): Meta

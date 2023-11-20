@@ -31,8 +31,6 @@ You can find full plugin description [here](https://wpserved.com/plugins/post-dr
 You can find plugin's source files on our GitHub repo [page](https://github.com/wpserved/post-draft-preview).
 
 == Changelog ==
-= 1.0.2 =
-* Fix checking for draft status metadata
 
 = 1.0.1 =
 * Fix problem with the "Disable PDP" button

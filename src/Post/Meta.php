@@ -11,7 +11,7 @@ class Meta
 
     private function setHash(string $hash, int $postID): void
     {
-        if (@metadata_exists(get_post_type($postID), $postID, 'pdp_hash')) {
+        if (@metadata_exists('post', $postID, 'pdp_hash')) {
             update_post_meta($postID, 'pdp_hash', $hash);
             return;
         }
@@ -25,11 +25,11 @@ class Meta
 
     public function setStatus(int $postID, int $status): void
     {
-        if (1 === $status && ! @metadata_exists(get_post_type($postID), $postID, 'pdp_hash')) {
+        if (1 === $status && ! @metadata_exists('post', $postID, 'pdp_hash')) {
             $this->setHash($this->generateRandomString() . $postID, $postID);
         }
 
-        if (@metadata_exists(get_post_type($postID), $postID, 'pdp_status')) {
+        if (@metadata_exists('post', $postID, 'pdp_status')) {
             update_post_meta($postID, 'pdp_status', $status);
             return;
         }

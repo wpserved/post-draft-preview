@@ -35,4 +35,18 @@ class Config
         wp_enqueue_script('pdp/manifest.js', PDP_ASSETS_URI . '/scripts/manifest.js', ['jquery'], $version, true);
         wp_enqueue_script('pdp/admin.js', PDP_ASSETS_URI . '/scripts/admin.js', ['pdp/manifest.js'], $version, true);
     }
+
+    /**
+     * Add Settings link on the plugin list
+     *
+     * @filter plugin_action_links_post-draft-preview/post-draft-preview.php
+     */
+    public function settingsLink(array $links): array
+    {
+        $url = admin_url('tools.php?page=pdp-dashboard');
+        $settings_link = '<a href="'.$url.'">'. __('Settings', 'pdp') .'</a>';
+        array_unshift($links, $settings_link);
+
+        return $links;
+    }
 }

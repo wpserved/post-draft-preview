@@ -3,8 +3,8 @@ Contributors: wpserved
 Donate link: https://wpserved.com/
 Tags: post draft, post preview, draft preview, public link
 Requires at least: 5.5
-Tested up to: 6.3
-Stable tag: 1.2.1
+Tested up to: 6.4
+Stable tag: 1.2.2
 Requires PHP: 7.4
 License: GNU General Public License v3.0
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
@@ -31,6 +31,10 @@ You can find full plugin description [here](https://wpserved.com/plugins/post-dr
 You can find plugin's source files on our GitHub repo [page](https://github.com/wpserved/post-draft-preview).
 
 == Changelog ==
+
+= 1.2.2 =
+* Add settings link on plugin list
+* Fix PDP button not showing
 
 = 1.2.1 =
 * Fix preview disable button functionality

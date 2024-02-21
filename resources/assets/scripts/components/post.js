@@ -66,16 +66,16 @@ export default class Post {
   addPreviewButtonForGutenberg() {
     const slot = $('button.block-editor-post-preview__button-toggle');
     const previewUrl = $(`<a class="pdp-preview-url" href="${this.previewUrl}" target="_blank"><input type="text" value="${this.previewUrl}" readonly></a>`);
-    
-    if (slot) {
-      $(`<a class="components-button is-secondary button--pdp-change-status" href="#">${this.label}</a>`).insertBefore(slot);
+
+    if (slot.parent()) {
+      $(`<a class="components-button is-secondary button--pdp-change-status" href="#">${this.label}</a>`).insertBefore(slot.parent());
     }
 
     if (1 !== this.status) {
       previewUrl.hide();
     }
 
-    previewUrl.insertBefore(slot);
+    previewUrl.insertBefore(slot.parent());
   }
 
   addButtonForClassicEditor() {
@@ -86,7 +86,7 @@ export default class Post {
     if (slot) {
       $(`<a class="preview button is-pdp-preview button--pdp-change-status" href="#">${this.label}</a>`).appendTo(container);
     }
-    
+
     if (1 !== this.status) {
       previewUrl.hide();
     }
@@ -95,12 +95,15 @@ export default class Post {
 
     container.insertAfter(slot);
   }
-  
+
   initGutenbergLoadEvent(timeout = 4000) {
     if ($('#editor').length > 0) {
       const interval = setInterval(() => {
         timeout -= 250;
-        if ($('.wp-block-post-title').length > 0 || $('#post-title-0').length > 0) {
+        if (
+          $('.wp-block-post-title').length > 0 || $('#post-title-0').length > 0 ||
+          $('iframe[name=editor-canvas]').contents().find('.wp-block-post-title')
+        ) {
           $(document).trigger('pdp_gutenberg_loaded');
           clearInterval(interval);
         }

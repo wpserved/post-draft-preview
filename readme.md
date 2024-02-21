@@ -1,14 +1,14 @@
 # Post Draft Preview
 
 ## Description
-Simple plugin enabling the publication of post drafts. 
-It allows preview of a draft without being logged to the WordPress admin panel. 
+Simple plugin enabling the publication of post drafts.
+It allows preview of a draft without being logged to the WordPress admin panel.
 Compatible with the Gutenberg and the Classic Editor.
 
 ## How it works
-Content created in WordPress from the moment a post or page is added, but before it is published, receives draft status. 
-You can send the draft to someone else, but that person must have adequate access to the wp-admin section. 
-The problem arises when we want to show a draft of the post to people who do not have access to our wp-admin panel. 
+Content created in WordPress from the moment a post or page is added, but before it is published, receives draft status.
+You can send the draft to someone else, but that person must have adequate access to the wp-admin section.
+The problem arises when we want to show a draft of the post to people who do not have access to our wp-admin panel.
 For this purpose, we have created the Post Draft Preview plugin.
 
 ## Functionalities
@@ -27,8 +27,8 @@ For this purpose, we have created the Post Draft Preview plugin.
 Automatic install from WordPress Dashboard
 
 1. Click on Plugins → Add New;
-2. Search for "Duplicate Post" using the top right searchbox;
+2. Search for "Post Draft Preview" using the top right searchbox;
 3. Click on the Install Now button;
 4. Click on Activate;
-5. Go to Settings → Duplicate Post and customize behaviour as needed.
+5. Go to Settings → Post Draft Preview and customize behaviour as needed.
 
